@@ -1,0 +1,6 @@
+@CursoFinder_HostAddress = http://localhost:5196
+
+GET {{CursoFinder_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

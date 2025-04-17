@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoFinder", "CursoFinder\CursoFinder.csproj", "{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C56C38DA-7801-417C-87F6-B55740C91F34}
+	EndGlobalSection
+EndGlobal

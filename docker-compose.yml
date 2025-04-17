@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rei120903
+      MYSQL_DATABASE: cursofinder
+      MYSQL_USER: root
+      MYSQL_PASSWORD: rei120903
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./CursoFinder Back
+    container_name: backend_container
+    depends_on:
+      - mysql
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mysql;DataBase=cursofinder;Uid=root;Pwd=rei120903
+    ports:
+      - "5000:80"
+
+  frontend:
+    build:
+      context: ./CursoFinder_TCC Front/cursofinder
+    container_name: frontend_container
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql-data:
