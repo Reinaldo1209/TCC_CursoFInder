@@ -4,23 +4,32 @@ import Login from "./pages/TelasLogin/Login";
 import Cadastro from "./pages/TelasLogin/Cadastro";
 import RecuperacaoSenha from "./pages/TelasLogin/RecuperacaoSenha";
 import RedefinirSenha from "./pages/TelasLogin/RedefinirSenha";
-import TelaInicial from "./pages/Tela Inicial/TelaInicial"
-import BuscarCurso from "./pages/Tela Inicial/BuscarCurso"
-
+import TelaInicial from "./pages/Tela Inicial/TelaInicial";
+import BuscarCurso from "./pages/Tela Inicial/BuscarCurso";
+import MeusCursosPage from "./pages/Tela Inicial/MeusCursosPage";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
     <Router>
-    <Routes>
-      <Route path="/Login" element={<Login />} />
-      <Route path="/cadastro" element={<Cadastro />} />
-      <Route path="/recuperacao-senha" element={<RecuperacaoSenha />} />
-      <Route path="/reset-password" element={<RedefinirSenha />} />
-      <Route path="/" element={<TelaInicial />} />
-      <Route path="/BuscarCurso" element={<BuscarCurso />} />
-    </Routes>
-  </Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/recuperacao-senha" element={<RecuperacaoSenha />} />
+        <Route path="/reset-password" element={<RedefinirSenha />} />
+        <Route path="/" element={<TelaInicial />} />
+        <Route path="/buscarcurso" element={<BuscarCurso />} />
+        <Route path="/meuscursos" element={
+          <PrivateRoute>
+            <MeusCursosPage />
+          </PrivateRoute>
+        } />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
+
+

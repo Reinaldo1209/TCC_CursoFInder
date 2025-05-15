@@ -1,12 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthProvider"; 
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = async () => {
+    if (!email || !senha) {
+      alert("Por favor, preencha e-mail e senha");
+      return;
+    }
+
+    setLoading(true);
     try {
       const response = await fetch("https://localhost:7238/api/auth/login", {
         method: "POST",
@@ -22,11 +31,13 @@ export default function Login() {
       }
 
       const data = await response.json();
-      localStorage.setItem("token", data.token);
-      navigate("/BuscarCurso");
+      login(data.token); // Usa o contexto para salvar o token e usuário
+      navigate("/");
     } catch (error) {
       console.error("Erro ao fazer login:", error.message);
-      alert(`Verifique se seu e-mail ou senha são válidos`);
+      alert("Verifique se seu e-mail ou senha são válidos");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -53,7 +64,9 @@ export default function Login() {
       >
         <h2 style={{ marginBottom: "20px" }}>Login</h2>
 
-        <label style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}>
+        <label
+          style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}
+        >
           E-mail
         </label>
         <input
@@ -68,9 +81,12 @@ export default function Login() {
             border: "1px solid #ccc",
             borderRadius: "5px",
           }}
+          disabled={loading}
         />
 
-        <label style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}>
+        <label
+          style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}
+        >
           Senha
         </label>
         <input
@@ -85,6 +101,7 @@ export default function Login() {
             border: "1px solid #ccc",
             borderRadius: "5px",
           }}
+          disabled={loading}
         />
 
         <div
@@ -115,20 +132,25 @@ export default function Login() {
 
         <button
           onClick={handleLogin}
+          disabled={loading}
           style={{
             width: "100%",
-            background: "#003366",
+            background: loading ? "#666" : "#003366",
             color: "white",
             border: "none",
             padding: "10px",
             borderRadius: "5px",
             marginTop: "15px",
-            cursor: "pointer",
+            cursor: loading ? "not-allowed" : "pointer",
           }}
-          onMouseOver={(e) => (e.target.style.background = "#002244")}
-          onMouseOut={(e) => (e.target.style.background = "#003366")}
+          onMouseOver={(e) => {
+            if (!loading) e.target.style.background = "#002244";
+          }}
+          onMouseOut={(e) => {
+            if (!loading) e.target.style.background = "#003366";
+          }}
         >
-          Login
+          {loading ? "Entrando..." : "Login"}
         </button>
       </div>
     </div>

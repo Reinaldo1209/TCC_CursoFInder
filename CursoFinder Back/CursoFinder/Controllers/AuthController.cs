@@ -96,7 +96,11 @@ namespace CursoFinder.Controllers
         private string GenerateJwtToken(User user)
         {
             var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
-            var claims = new List<Claim> { new Claim(ClaimTypes.Name, user.UserName) };
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.NameIdentifier, user.Id), // adiciona o ID do usuário
+        new Claim(ClaimTypes.Name, user.UserName)
+    };
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
@@ -108,6 +112,7 @@ namespace CursoFinder.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
     }
 }
 

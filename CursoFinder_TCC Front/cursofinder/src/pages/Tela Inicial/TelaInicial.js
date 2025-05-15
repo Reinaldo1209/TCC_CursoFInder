@@ -1,14 +1,28 @@
-import { useState } from "react";
-import {Container,Navbar,Nav,Row,Col,Card,Button,Modal,} from "react-bootstrap";
-import { FaMoon, FaSun, FaPhone, FaUser } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import {
+  Container,
+  Navbar,
+  Nav,
+  Row,
+  Col,
+  Card,
+  Button,
+  Modal,
+} from "react-bootstrap";
+import { FaMoon, FaSun, FaPhone, FaUser, FaSignOutAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useAuth } from "../../context/AuthProvider";
+
 
 export default function HomePage() {
   const [darkMode, setDarkMode] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [cursoSelecionado, setCursoSelecionado] = useState(null);
+  const [cursos, setCursos] = useState([]);
   const navigate = useNavigate();
+
+  const { user, isAuthenticated, logout } = useAuth();
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
@@ -16,26 +30,12 @@ export default function HomePage() {
   const navTheme = darkMode ? "dark" : "light";
   const navBg = darkMode ? "bg-secondary" : "bg-primary";
 
-  const cursos = [
-    {
-      id: 1,
-      titulo: "Ciência da Computação",
-      descricao:
-        "Curso completo sobre algoritmos, estruturas de dados, sistemas operacionais, redes e muito mais.",
-    },
-    {
-      id: 2,
-      titulo: "Desenvolvimento Web",
-      descricao:
-        "Aprenda HTML, CSS, JavaScript, React e backend com Node.js para criar aplicações modernas.",
-    },
-    {
-      id: 3,
-      titulo: "Análise de Dados",
-      descricao:
-        "Curso focado em Python, estatística, visualização de dados e uso de ferramentas como Pandas e Power BI.",
-    },
-  ];
+  useEffect(() => {
+    fetch("https://localhost:7238/api/Curso")
+      .then((res) => res.json())
+      .then((data) => setCursos(data))
+      .catch((error) => console.error("Erro ao buscar cursos públicos:", error));
+  }, []);
 
   const abrirModal = (curso) => {
     setCursoSelecionado(curso);
@@ -46,15 +46,12 @@ export default function HomePage() {
     setShowModal(false);
     setCursoSelecionado(null);
   };
+  const ultimosCursos = [...cursos].slice(-3).reverse();
+
 
   return (
     <div className={mainTheme} style={{ minHeight: "100vh" }}>
-      <Navbar
-        expand="lg"
-        variant={navTheme}
-        className={`${navBg} py-3`}
-        fixed="top"
-      >
+      <Navbar expand="lg" variant={navTheme} className={`${navBg} py-3`} fixed="top">
         <Container>
           <Navbar.Brand href="#" className="fw-bold text-white">
             Curso<span className="text-warning">Finder</span>
@@ -62,18 +59,34 @@ export default function HomePage() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto align-items-center gap-3">
-              <Nav.Link href="#" className="text-white">
-                Home
-              </Nav.Link>
-              <FaPhone className="text-white" title="Fale Conosco" />
-              <Button variant="light" size="sm" onClick={() => navigate("/login")}>
-                <FaUser className="me-2" />
-                Login
-              </Button>
+              {isAuthenticated ? (
+                <>
+                  
+                  <Button
+                    variant="light"
+                    size="sm"
+                    onClick={() => {
+                      logout();
+                    }}
+                    className="d-flex align-items-center gap-1"
+                    title="Logout"
+                  >
+                    <FaSignOutAlt />
+                    Sair
+                  </Button>
+                </>
+              ) : (
+                <Button variant="light" size="sm" onClick={() => navigate("/login")}>
+                  <FaUser className="me-2" />
+                  Login
+                </Button>
+              )}
+
               <Button
                 variant={darkMode ? "light" : "dark"}
                 size="sm"
                 onClick={toggleDarkMode}
+                title={darkMode ? "Modo claro" : "Modo escuro"}
               >
                 {darkMode ? <FaSun /> : <FaMoon />}
               </Button>
@@ -95,32 +108,42 @@ export default function HomePage() {
         </Container>
 
         <Container className="py-5">
-          <h3 className="text-center mb-4">Cursos em Destaque</h3>
-          <Row className="g-4">
-            {cursos.map((curso) => (
-              <Col key={curso.id} md={4}>
-                <Card className="h-100 shadow">
-                  <Card.Body>
-                    <Card.Title>{curso.titulo}</Card.Title>
-                    <Card.Text>
-                      Clique em "Saiba mais" para ver a descrição completa.
-                    </Card.Text>
-                    <Button variant="primary" onClick={() => abrirModal(curso)}>
-                      Saiba mais
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container>
+        <h3 className="text-center mb-4">Cursos em Destaque</h3>
+        <Row className="g-4">
+          {ultimosCursos.map((curso) => (
+            <Col key={curso.id} md={4}>
+              <Card className="h-100 shadow">
+                <Card.Body>
+                  <Card.Title>{curso.titulo}</Card.Title>
+                  <Card.Text>
+                    Clique em "Saiba mais" para ver a descrição completa.
+                  </Card.Text>
+                  <Button variant="primary" onClick={() => abrirModal(curso)}>
+                    Saiba mais
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
       </div>
 
       <Modal show={showModal} onHide={fecharModal}>
         <Modal.Header closeButton>
           <Modal.Title>{cursoSelecionado?.titulo}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{cursoSelecionado?.descricao}</Modal.Body>
+        <Modal.Body>
+          {cursoSelecionado && (
+            <>
+              <h5>{cursoSelecionado.titulo}</h5>
+              <p><strong>Descrição:</strong> {cursoSelecionado.descricao}</p>
+              <p><strong>Instituição:</strong> {cursoSelecionado.instituicao || "N/A"}</p>
+              <p><strong>Carga Horária:</strong> {cursoSelecionado.cargaHoraria || "N/A"}</p>
+              <p><strong>Valor:</strong> {cursoSelecionado.valor || "N/A"}</p>
+            </>
+          )}
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={fecharModal}>
             Fechar
@@ -139,4 +162,5 @@ export default function HomePage() {
     </div>
   );
 }
+
 
