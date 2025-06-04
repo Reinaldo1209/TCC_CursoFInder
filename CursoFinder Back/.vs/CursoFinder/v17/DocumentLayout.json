@@ -3,32 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\models\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\models\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\controllers\\cursossalvoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\controllers\\cursossalvoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\controllers\\avaliacoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\controllers\\avaliacoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\dtos\\avaliacaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\dtos\\avaliacaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\models\\avaliacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\models\\avaliacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\models\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\models\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\models\\cursosalvo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\models\\cursosalvo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\controllers\\cursossalvoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\controllers\\cursossalvoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\models\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\models\\cursosalvo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\models\\cursosalvo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|solutionrelative:cursofinder\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B546DB2-F361-4EF0-9E32-F08A8C4ADFBC}|CursoFinder\\CursoFinder.csproj|c:\\users\\reina\\onedrive\\\u00E1rea de trabalho\\tcc\\cursofinder back\\cursofinder\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,50 +86,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CursosSalvosController.cs",
-              "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\CursosSalvosController.cs",
-              "RelativeDocumentMoniker": "CursoFinder\\Controllers\\CursosSalvosController.cs",
-              "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\CursosSalvosController.cs",
-              "RelativeToolTip": "CursoFinder\\Controllers\\CursosSalvosController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwD4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T01:45:33.308Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EmailSettings.cs",
-              "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\EmailSettings.cs",
-              "RelativeDocumentMoniker": "CursoFinder\\Models\\EmailSettings.cs",
-              "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\EmailSettings.cs",
-              "RelativeToolTip": "CursoFinder\\Models\\EmailSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T09:37:09.235Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AvaliacaoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\DTOs\\AvaliacaoDTO.cs",
+              "RelativeDocumentMoniker": "CursoFinder\\DTOs\\AvaliacaoDTO.cs",
+              "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\DTOs\\AvaliacaoDTO.cs",
+              "RelativeToolTip": "CursoFinder\\DTOs\\AvaliacaoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T02:18:39.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AvaliacoesController.cs",
+              "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\AvaliacoesController.cs",
+              "RelativeDocumentMoniker": "CursoFinder\\Controllers\\AvaliacoesController.cs",
+              "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\AvaliacoesController.cs",
+              "RelativeToolTip": "CursoFinder\\Controllers\\AvaliacoesController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T03:43:50.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Avaliacao.cs",
+              "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\Avaliacao.cs",
+              "RelativeDocumentMoniker": "CursoFinder\\Models\\Avaliacao.cs",
+              "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\Avaliacao.cs",
+              "RelativeToolTip": "CursoFinder\\Models\\Avaliacao.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T03:42:39.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CursoController.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\CursoController.cs",
               "RelativeDocumentMoniker": "CursoFinder\\Controllers\\CursoController.cs",
               "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\CursoController.cs",
               "RelativeToolTip": "CursoFinder\\Controllers\\CursoController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAzwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T23:39:03.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Program.cs",
               "RelativeDocumentMoniker": "CursoFinder\\Program.cs",
@@ -125,12 +149,11 @@
               "RelativeToolTip": "CursoFinder\\Program.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAgwBkAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T04:31:36.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T04:31:36.325Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "CursoFinder\\Controllers\\AuthController.cs",
@@ -143,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\appsettings.json",
               "RelativeDocumentMoniker": "CursoFinder\\appsettings.json",
@@ -151,38 +174,36 @@
               "RelativeToolTip": "CursoFinder\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-18T04:34:37.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T04:34:37.236Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\User.cs",
               "RelativeDocumentMoniker": "CursoFinder\\Models\\User.cs",
               "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\User.cs",
               "RelativeToolTip": "CursoFinder\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T04:36:43.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Curso.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\Curso.cs",
               "RelativeDocumentMoniker": "CursoFinder\\Models\\Curso.cs",
               "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\Curso.cs",
               "RelativeToolTip": "CursoFinder\\Models\\Curso.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T23:37:52.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T23:37:52.662Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "CursoFinder\\DTOs\\LoginDto.cs",
@@ -190,36 +211,59 @@
               "RelativeToolTip": "CursoFinder\\DTOs\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T05:35:58.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T05:35:58.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "CursoFinder\\Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Data\\AppDbContext.cs",
               "RelativeToolTip": "CursoFinder\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAgwCIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T04:37:17.498Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
+              "Title": "EmailSettings.cs",
+              "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\EmailSettings.cs",
+              "RelativeDocumentMoniker": "CursoFinder\\Models\\EmailSettings.cs",
+              "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\EmailSettings.cs",
+              "RelativeToolTip": "CursoFinder\\Models\\EmailSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T09:37:09.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "CursoSalvo.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\CursoSalvo.cs",
               "RelativeDocumentMoniker": "CursoFinder\\Models\\CursoSalvo.cs",
               "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Models\\CursoSalvo.cs",
               "RelativeToolTip": "CursoFinder\\Models\\CursoSalvo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T01:35:28.932Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
+              "Title": "CursosSalvosController.cs",
+              "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\CursosSalvosController.cs",
+              "RelativeDocumentMoniker": "CursoFinder\\Controllers\\CursosSalvosController.cs",
+              "ToolTip": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Controllers\\CursosSalvosController.cs",
+              "RelativeToolTip": "CursoFinder\\Controllers\\CursosSalvosController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T01:45:33.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\DTOs\\RegisterDto.cs",
               "RelativeDocumentMoniker": "CursoFinder\\DTOs\\RegisterDto.cs",
@@ -231,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "ResetPasswordDto.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\DTOs\\ResetPasswordDto.cs",
               "RelativeDocumentMoniker": "CursoFinder\\DTOs\\ResetPasswordDto.cs",
@@ -243,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "ForgotPasswordDto.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\DTOs\\ForgotPasswordDto.cs",
               "RelativeDocumentMoniker": "CursoFinder\\DTOs\\ForgotPasswordDto.cs",
@@ -255,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "CursoFinder\\Properties\\launchSettings.json",
@@ -267,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Users\\reina\\OneDrive\\\u00C1rea de Trabalho\\TCC\\CursoFinder Back\\CursoFinder\\Services\\EmailService.cs",
               "RelativeDocumentMoniker": "CursoFinder\\Services\\EmailService.cs",

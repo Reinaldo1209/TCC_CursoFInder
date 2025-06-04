@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthProvider"; 
+import { useAuth } from "../../context/AuthProvider";
+import Header from "../TelasHeadFoot/Header";
+import './login.css';
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -9,7 +11,8 @@ export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault(); // Para evitar reload no submit do form
     if (!email || !senha) {
       alert("Por favor, preencha e-mail e senha");
       return;
@@ -42,118 +45,66 @@ export default function Login() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        minHeight: "100vh",
-        backgroundColor: "#f2f2f2",
-      }}
-    >
-      <div
-        style={{
-          background: "white",
-          padding: "20px",
-          borderRadius: "10px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-          width: "350px",
-          textAlign: "center",
-        }}
-      >
-        <h2 style={{ marginBottom: "20px" }}>Login</h2>
-
-        <label
-          style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}
-        >
-          E-mail
-        </label>
-        <input
-          type="email"
-          placeholder="Digite seu e-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{
-            width: "95%",
-            padding: "8px",
-            marginTop: "5px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-          disabled={loading}
-        />
-
-        <label
-          style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}
-        >
-          Senha
-        </label>
-        <input
-          type="password"
-          placeholder="Digite sua senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-          style={{
-            width: "95%",
-            padding: "8px",
-            marginTop: "5px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-          disabled={loading}
-        />
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            fontSize: "14px",
-            marginTop: "10px",
-          }}
-        >
-          <a
-            href="/recuperacao-senha"
-            style={{ textDecoration: "none", color: "#003366" }}
-            onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
-            onMouseOut={(e) => (e.target.style.textDecoration = "none")}
+    <div>
+      <Header />
+      <main id="container">
+        <form id="login_form" onSubmit={handleLogin}>
+          <div id="form_header">
+            <h1 className="login">Login</h1>
+          </div>
+          <div id="input">
+            <div id="input-box">
+              <label htmlFor="email" className="label-write">
+                E-mail
+                <div className="input-field">
+                  <i className="fa-solid fa-envelope icon-login"></i>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={loading}
+                  />
+                </div>
+              </label>
+            </div>
+            <div id="input-box">
+              <label htmlFor="password" className="label-write">
+                Senha
+                <div className="input-field">
+                  <i className="fa-solid fa-key icon-login"></i>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Digite sua senha"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                    disabled={loading}
+                  />
+                </div>
+              </label>
+              <div id="forgot_password">
+                <a href="/recuperacao-senha" className="forgot">
+                  Esqueceu a senha?
+                </a>
+                <a href="/cadastro" className="forgot">
+                  Cadastre-se
+                </a>
+              </div>
+            </div>
+          </div>
+          <button
+            type="submit"
+            className="login-button"
+            disabled={loading}
           >
-            Esqueceu a senha?
-          </a>
-          <a
-            href="/cadastro"
-            style={{ textDecoration: "none", color: "#003366" }}
-            onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
-            onMouseOut={(e) => (e.target.style.textDecoration = "none")}
-          >
-            Cadastrar-se
-          </a>
-        </div>
-
-        <button
-          onClick={handleLogin}
-          disabled={loading}
-          style={{
-            width: "100%",
-            background: loading ? "#666" : "#003366",
-            color: "white",
-            border: "none",
-            padding: "10px",
-            borderRadius: "5px",
-            marginTop: "15px",
-            cursor: loading ? "not-allowed" : "pointer",
-          }}
-          onMouseOver={(e) => {
-            if (!loading) e.target.style.background = "#002244";
-          }}
-          onMouseOut={(e) => {
-            if (!loading) e.target.style.background = "#003366";
-          }}
-        >
-          {loading ? "Entrando..." : "Login"}
-        </button>
-      </div>
+            {loading ? "Entrando..." : "Login"}
+          </button>
+        </form>
+      </main>
     </div>
   );
 }
-

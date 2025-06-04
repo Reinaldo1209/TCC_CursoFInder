@@ -1,0 +1,253 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #dee1e2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark{
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox{
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label{
+  background-color: #111;
+  width: 50px;
+  height: 20px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon{
+  background-image: linear-gradient(40deg, #a3dafb, #8983f7 50%) !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-sun{
+  background-image: linear-gradient(40deg,#ff0080,#ff8c00 70%) !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.checkbox-label .ball{
+  background-color: #fff;
+  width: 22px;
+  height: 16px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 40%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+  background: black;
+}
+
+.checkbox:checked + .checkbox-label{
+  background: white;
+}
+
+.fale-conosco{
+  right: 50px;
+  display:flex;
+  position: absolute;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 1px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fale {
+  margin: 0;
+  line-height: 1;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 30px;
+  height: 80px;
+  background: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+  z-index: 999;
+  border-top: #8f8f8f 2px solid;
+}
+
+.button-header{
+  all: unset;
+}
+
+.logo{
+  color: #002060;
+  text-decoration: none;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.titulo{
+  color: #333;
+}
+
+.group{
+  display: flex;
+  align-items: center;
+}
+
+header ul{
+  position: relative;
+  display: flex;
+  gap: 30px;
+  margin-top: 17px;
+}
+
+header ul li{
+  list-style: none;
+}
+
+header ul li span{
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+header ul li a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.user-icon {
+  cursor: pointer;
+}
+
+.user-icon .fa-user {
+  font-size: 15px;
+}
+
+header .search{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.searchBox{
+  position: absolute;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  padding: 0 30px;
+  transition: 0.5s ease-in-out;
+}
+
+.searchBox.active{
+  right: 0;
+}
+
+.searchBox input{
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 50px;
+  color: #333;
+  font-size: 1.25rem;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.searchBtn,
+.closeBtn {
+  position: relative;
+  left: 10px;
+  top: 2.5px;
+  transition: 0.5s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  scale: 1;
+}
+
+/* Quando ativos, o botão de busca deve sumir */
+.searchBtn.active {
+  opacity: 0;
+  visibility: hidden;
+  scale: 0;
+  left: 0;
+}
+
+/* O botão de fechar começa oculto */
+.closeBtn {
+  opacity: 0;
+  visibility: hidden;
+  scale: 0;
+}
+
+/* Quando ativo, ele aparece */
+.closeBtn.active {
+  opacity: 1;
+  visibility: visible;
+  scale: 1;
+}
+
+#listaProdutos{
+  display: none;   
+  width: 91%;
+  border: 1px solid #ddd;
+  margin:0;
+  padding:0;
+  position: absolute;
+  top: 70px;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+#listaProdutos li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  font-size: 16px;
+  color: black;
+  border: 1px solid #ddd;
+  background: #f6f6f6;
+  padding: 12px;
+  flex-wrap: wrap;
+}

@@ -22,6 +22,39 @@ namespace CursoFinder.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("CursoFinder.Models.Avaliacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comentario")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("CursoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataAvaliacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Nota")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CursoId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Avaliacoes");
+                });
+
             modelBuilder.Entity("CursoFinder.Models.Curso", b =>
                 {
                     b.Property<int>("Id")
@@ -271,6 +304,25 @@ namespace CursoFinder.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("CursoFinder.Models.Avaliacao", b =>
+                {
+                    b.HasOne("CursoFinder.Models.Curso", "Curso")
+                        .WithMany("Avaliacoes")
+                        .HasForeignKey("CursoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CursoFinder.Models.User", "User")
+                        .WithMany("Avaliacoes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Curso");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CursoFinder.Models.CursoSalvo", b =>
                 {
                     b.HasOne("CursoFinder.Models.Curso", "Curso")
@@ -341,8 +393,15 @@ namespace CursoFinder.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("CursoFinder.Models.Curso", b =>
+                {
+                    b.Navigation("Avaliacoes");
+                });
+
             modelBuilder.Entity("CursoFinder.Models.User", b =>
                 {
+                    b.Navigation("Avaliacoes");
+
                     b.Navigation("CursosSalvos");
                 });
 #pragma warning restore 612, 618

@@ -10,6 +10,8 @@ namespace CursoFinder.Data
 
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<CursoSalvo> CursosSalvos { get; set; }
+        public DbSet<Avaliacao> Avaliacoes { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CursoFinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e54ad0533f0118c74ee739e2ea0f4c601bdf3fae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4638783e0e48f0b005b27f53a216a61d190a8a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("CursoFinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CursoFinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

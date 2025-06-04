@@ -1,0 +1,223 @@
+/* Página Inicial*/
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fale-conosco {
+    transition: color 0.3s;
+}
+
+header {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+footer {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logo-footer, .links-footer ul li {
+    transition: color 0.3s;
+}
+
+.page-inner-content {
+    transition: color 0.3s;
+}
+
+hr {
+    transition: border-color 10.3s;
+}
+
+.ball {
+    transition: background-color 0.3s;
+}
+
+.fale-conosco svg {
+    transition: fill 0.3s;
+}
+
+.navigation a {
+    transition: color 0.3s;
+}
+
+.dark-mode footer {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode .logo-footer {
+    color: #fff;
+}
+
+.dark-mode .links-footer ul li {
+    color: #fff;
+}
+
+.dark-mode .page-inner-content {
+    color: #fff;
+}
+
+.dark-mode .ball {
+    background-color: #000;
+}
+
+.dark-mode .fale-conosco svg {
+    fill: #fff;
+}
+
+.dark-mode .navigation span {
+    color: #fff;
+}
+
+.dark-mode .logo{
+    color: rgb(0, 183, 255);
+}
+
+.dark-mode .titulo{
+    color: white;
+}
+
+.dark-mode .titulo-footer{
+    color: rgb(0, 183, 255);
+}
+
+.dark-mode .dark{
+    background: #222;
+}
+
+.dark-mode .fale-conosco {
+    color: #fff;
+}
+
+.dark-mode header {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark{
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    color: black;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 40px;
+    z-index: 999;
+    top: 0;
+}
+
+body.dark-mode {
+    background-color: rgb(255, 255, 255);
+}
+
+body.dark-mode h2{
+    color: white;
+}
+
+body.dark-mode .texto{
+    color: rgb(0, 183, 255);
+}
+
+body.dark-mode .section-title{
+    color: white;
+}
+
+body.dark-mode .section-title2{
+    color: white;
+}
+
+body.dark-mode .article-button{
+    background-color: rgb(0, 183, 255);
+    color: black;
+}
+
+body.dark-mode .article-button:hover{
+    background-color: rgb(0, 125, 184);
+}
+
+body.dark-mode .btn-primary{
+    background-color: rgb(0, 183, 255);
+    color: black;
+    border: 2px solid rgb(0, 225, 255);
+}
+
+body.dark-mode .subtitle-underline{
+    background-color: rgb(0, 183, 255);
+}
+
+body.dark-mode .gray-background {
+    background-image: radial-gradient(#067c7c, black);
+}
+
+/*Tela Inicial*/
+body.dark-mode .mainTheme{
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode .detalhe{
+    background-color: #1F2326;
+    color: white;
+}
+
+body.dark-mode .button-inicial{
+    background-color: rgb(0, 183, 255);
+    color: black;
+    border: none;
+}
+
+body.dark-mode .button-buscar{
+    border: none;
+}
+
+/* Página Login */
+body.dark-mode #container{
+    background-color: #000;
+}
+
+body.dark-mode #login_form{
+    background-color: #1F2326;
+}
+
+body.dark-mode .login{
+    color: white;
+}
+
+body.dark-mode .label-write{
+    color: rgb(0, 183, 255);
+}
+
+body.dark-mode #email{
+    color: white;
+}
+
+body.dark-mode #password{
+    color: white;
+}
+
+body.dark-mode .icon-login{
+    color: rgb(0, 183, 255);
+}
+
+body.dark-mode .login-button{
+    background-color: rgb(0, 132, 255);
+    color: rgb(255, 255, 255);
+}
+
+body.dark-mode .login-button:hover{
+    background-color: rgb(13, 94, 126);
+    color: rgb(255, 255, 255);
+}
+
+body.dark-mode #forgot_password a{
+    color: #ffffffaf;
+}
+
+body.dark-mode #forgot_password a:hover{
+    color: #ffffff;
+}
+
+body.dark-mode #forgot_password_login a:hover{
+    color: #ffffff;
+}

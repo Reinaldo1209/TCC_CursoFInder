@@ -1,10 +1,12 @@
 import { useState } from "react";
+import Header from "../TelasHeadFoot/Header";
 
 export default function RecuperacaoSenha() {
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
 
-  const handleRecuperacao = async () => {
+  const handleRecuperacao = async (e) => {
+    e.preventDefault(); // Evita o reload padrão do form
     try {
       const response = await fetch("https://localhost:7238/api/auth/forgot-password", {
         method: "POST",
@@ -22,74 +24,41 @@ export default function RecuperacaoSenha() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        minHeight: "100vh",
-        backgroundColor: "#f2f2f2",
-      }}
-    >
-      <div
-        style={{
-          background: "white",
-          padding: "20px",
-          borderRadius: "10px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-          width: "350px",
-          textAlign: "center",
-        }}
-      >
-        <h2 style={{ marginBottom: "20px" }}>Recuperar Senha</h2>
-
-        <label
-          style={{
-            display: "block",
-            textAlign: "left",
-            fontWeight: "bold",
-            marginTop: "10px",
-          }}
-        >
-          E-mail
-        </label>
-        <input
-          type="email"
-          placeholder="Digite seu e-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{
-            width: "95%",
-            padding: "8px",
-            marginTop: "5px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
-
-        <button
-          onClick={handleRecuperacao}
-          style={{
-            width: "100%",
-            background: "#003366",
-            color: "white",
-            border: "none",
-            padding: "10px",
-            borderRadius: "5px",
-            marginTop: "15px",
-            cursor: "pointer",
-          }}
-          onMouseOver={(e) => (e.target.style.background = "#002244")}
-          onMouseOut={(e) => (e.target.style.background = "#003366")}
-        >
-          Enviar
-        </button>
-
-        {mensagem && (
-          <p style={{ marginTop: "15px", color: "#333", fontSize: "14px" }}>{mensagem}</p>
-        )}
-      </div>
+    <div>
+      <Header />
+      <main id="container">
+        <form id="login_form" onSubmit={handleRecuperacao}>
+          <h4></h4>
+          <div id="form_header">
+            <h1 className="login">Recuperar senha</h1>
+          </div>
+          <div id="input">
+            <div id="input-box">
+              <label htmlFor="email" className="label-write">
+                E-mail
+                <div className="input-field">
+                  <i className="fa-solid fa-envelope icon-login"></i>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              </label>
+            </div>
+          </div>
+          <button type="submit" className="login-button">
+            Enviar
+          </button>
+          <div className="mensagem">
+            {mensagem}
+          </div>
+        </form>
+      </main>
     </div>
   );
 }

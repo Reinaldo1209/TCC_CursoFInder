@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Header from "../TelasHeadFoot/Header";
 
 export default function Cadastro() {
   const [nome, setNome] = useState("");
@@ -7,7 +8,8 @@ export default function Cadastro() {
   const [senha, setSenha] = useState("");
   const navigate = useNavigate();
 
-  const handleCadastro = async () => {
+  const handleCadastro = async (e) => {
+    e.preventDefault(); // Evita o reload da página ao submeter o formulário
     try {
       const response = await fetch("https://localhost:7238/api/auth/register", {
         method: "POST",
@@ -37,112 +39,74 @@ export default function Cadastro() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        minHeight: "100vh",
-        backgroundColor: "#f2f2f2",
-      }}
-    >
-      <div
-        style={{
-          background: "white",
-          padding: "20px",
-          borderRadius: "10px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-          width: "350px",
-          textAlign: "center",
-        }}
-      >
-        <h2 style={{ marginBottom: "20px" }}>Cadastrar</h2>
-
-        <label style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}>
-          Nome
-        </label>
-        <input
-          type="text"
-          placeholder="Digite seu nome"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
-          style={{
-            width: "95%",
-            padding: "8px",
-            marginTop: "5px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
-
-        <label style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}>
-          E-mail
-        </label>
-        <input
-          type="email"
-          placeholder="Digite seu e-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{
-            width: "95%",
-            padding: "8px",
-            marginTop: "5px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
-
-        <label style={{ display: "block", textAlign: "left", fontWeight: "bold", marginTop: "10px" }}>
-          Senha
-        </label>
-        <input
-          type="password"
-          placeholder="Crie uma senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-          style={{
-            width: "95%",
-            padding: "8px",
-            marginTop: "5px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
-
-        <button
-          onClick={handleCadastro}
-          style={{
-            width: "100%",
-            background: "#003366",
-            color: "white",
-            border: "none",
-            padding: "10px",
-            borderRadius: "5px",
-            marginTop: "15px",
-            cursor: "pointer",
-          }}
-          onMouseOver={(e) => (e.target.style.background = "#002244")}
-          onMouseOut={(e) => (e.target.style.background = "#003366")}
-        >
-          Cadastrar
-        </button>
-
-        <p style={{ marginTop: "10px", fontSize: "14px" }}>
-          Já tem uma conta?{" "}
-          <Link
-            to="/Login"
-            style={{
-              textDecoration: "none",
-              color: "#003366",
-            }}
-            onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
-            onMouseOut={(e) => (e.target.style.textDecoration = "none")}
-          >
-            Faça login
-          </Link>
-        </p>
-      </div>
+    <div>
+      <Header />
+      <main id="container" className="container-cad">
+        <form id="login_form" onSubmit={handleCadastro}>
+          <h4></h4>
+          <div id="form_header">
+            <h1 className="login">Cadastro</h1>
+          </div>
+          <div id="input">
+            <div id="input-box">
+              <label htmlFor="name" className="label-write">
+                Nome
+                <div className="input-field">
+                  <i className="fa-solid fa-user icon-login"></i>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Digite seu nome"
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                  />
+                </div>
+              </label>
+            </div>
+            <div id="input-box">
+              <label htmlFor="email" className="label-write">
+                E-mail
+                <div className="input-field">
+                  <i className="fa-solid fa-envelope icon-login"></i>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              </label>
+            </div>
+            <div id="input-box">
+              <label htmlFor="password" className="label-write">
+                Senha
+                <div className="input-field">
+                  <i className="fa-solid fa-key icon-login"></i>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Digite sua senha"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                  />
+                </div>
+              </label>
+            </div>
+            <div id="forgot_password">
+              <a href="/login" className="forgot">
+                Já possui cadastro?
+              </a>
+            </div>
+          </div>
+          <button type="submit" className="login-button">
+            Cadastrar
+          </button>
+        </form>
+      </main>
     </div>
   );
 }

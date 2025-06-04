@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container, Navbar, Nav, Row, Col, Card, Button
-} from "react-bootstrap";
-import { FaMoon, FaSun, FaUser } from "react-icons/fa";
-import { useNavigate, Link } from "react-router-dom";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import Header from "../TelasHeadFoot/Header";
+import Footer from "../TelasHeadFoot/Footer";
+import './TelaInicial.css';
 
 export default function SavedCoursesPage() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [userName, setUserName] = useState(null);
   const [savedCourses, setSavedCourses] = useState([]);
   const [expandedCourseId, setExpandedCourseId] = useState(null);
   const navigate = useNavigate();
@@ -21,8 +19,7 @@ export default function SavedCoursesPage() {
     }
 
     try {
-      const decoded = jwtDecode(token);
-      setUserName(decoded?.userName || decoded?.unique_name || "Usuário");
+      jwtDecode(token); // Apenas validação
 
       fetch("https://localhost:7238/api/CursosSalvos", {
         headers: {
@@ -45,51 +42,16 @@ export default function SavedCoursesPage() {
       console.error("Token inválido");
       navigate("/login");
     }
-  }, []);
-
-  const toggleDarkMode = () => setDarkMode(!darkMode);
-  const mainTheme = darkMode ? "bg-dark text-light" : "bg-light text-dark";
-  const variant = darkMode ? "dark" : "light";
-  const bgClass = darkMode ? "bg-secondary" : "bg-primary";
+  }, [navigate]);
 
   const toggleDetalhes = (cursoId) => {
     setExpandedCourseId(expandedCourseId === cursoId ? null : cursoId);
   };
 
   return (
-    <div className={mainTheme} style={{ minHeight: "100vh" }}>
-      <Navbar expand="lg" variant={variant} className={`${bgClass} py-3`} fixed="top">
-        <Container>
-          <Navbar.Brand as={Link} to="/" className="fw-bold text-white">
-            Curso<span className="text-warning">Finder</span>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar-nav" />
-          <Navbar.Collapse id="navbar-nav">
-            <Nav className="ms-auto align-items-center gap-3">
-              <Nav.Link as={Link} to="/" className="text-white">
-                Home
-              </Nav.Link>
-              <Nav.Link as={Link} to="/meuscursos" className="text-white">
-                Meus Cursos Salvos
-              </Nav.Link>
-
-              {userName && (
-                <span className="text-white fw-semibold">{userName}</span>
-              )}
-
-              <Button
-                variant={darkMode ? "light" : "dark"}
-                size="sm"
-                onClick={toggleDarkMode}
-              >
-                {darkMode ? <FaSun /> : <FaMoon />}
-              </Button>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-      <div style={{ paddingTop: "80px", paddingBottom: "150px" }}>
+    <div className="bg-light text-dark" style={{ minHeight: "100vh" }}>
+      <Header />
+      <div className="mainTheme" style={{ paddingTop: "125px", paddingBottom: "150px" }}>
         <Container className="py-5">
           <h2 className="text-center mb-4">Meus Cursos Salvos</h2>
 
@@ -99,7 +61,7 @@ export default function SavedCoursesPage() {
             <Row className="g-4">
               {savedCourses.map(course => (
                 <Col key={course.id} md={4}>
-                  <Card className="h-100 shadow">
+                  <Card className="h-100 shadow detalhe">
                     <Card.Body>
                       <Card.Title>{course.titulo}</Card.Title>
                       <Card.Text>{course.descricao}</Card.Text>
@@ -129,15 +91,11 @@ export default function SavedCoursesPage() {
           )}
         </Container>
       </div>
-
-      <footer className="bg-dark text-white py-4 mb-0">
-        <Container className="text-center">
-          <hr className="my-3" />
-          <p className="mb-0">&copy; 2025 CursoFinder - Todos os direitos reservados</p>
-        </Container>
-      </footer>
+      <Footer />
     </div>
   );
 }
+
+
 
 

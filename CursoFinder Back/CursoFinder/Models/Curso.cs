@@ -13,6 +13,7 @@ namespace CursoFinder.Models
         public string? Instituicao { get; set; }
         public string? CargaHoraria { get; set; }
         public string? Valor { get; set; }
+        public ICollection<Avaliacao> Avaliacoes { get; set; } = new List<Avaliacao>();
 
     }
 }

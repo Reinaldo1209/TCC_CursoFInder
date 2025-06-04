@@ -64,6 +64,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AvaliacoesController",
+    "Method": "AvaliarCurso",
+    "RelativePath": "api/Avaliacoes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CursoFinder.DTOs.AvaliacaoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AvaliacoesController",
+    "Method": "GetAvaliacoesDoCurso",
+    "RelativePath": "api/Avaliacoes/{cursoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cursoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CursoFinder.Controllers.CursoController",
     "Method": "GetCursosPublicos",
     "RelativePath": "api/Curso",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import Header from "../TelasHeadFoot/Header";
 
 export default function RedefinirSenha() {
   const [searchParams] = useSearchParams();
@@ -27,74 +28,41 @@ export default function RedefinirSenha() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        minHeight: "100vh",
-        backgroundColor: "#f2f2f2",
-      }}
-    >
-      <div
-        style={{
-          background: "white",
-          padding: "20px",
-          borderRadius: "10px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-          width: "350px",
-          textAlign: "center",
-        }}
-      >
-        <h2 style={{ marginBottom: "20px" }}>Redefinir Senha</h2>
-
-        <label
-          style={{
-            display: "block",
-            textAlign: "left",
-            fontWeight: "bold",
-            marginTop: "10px",
-          }}
-        >
-          Nova Senha
-        </label>
-        <input
-          type="password"
-          placeholder="Digite a nova senha"
-          value={novaSenha}
-          onChange={(e) => setNovaSenha(e.target.value)}
-          style={{
-            width: "95%",
-            padding: "8px",
-            marginTop: "5px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
-
-        <button
-          onClick={handleRedefinirSenha}
-          style={{
-            width: "100%",
-            background: "#003366",
-            color: "white",
-            border: "none",
-            padding: "10px",
-            borderRadius: "5px",
-            marginTop: "15px",
-            cursor: "pointer",
-          }}
-          onMouseOver={(e) => (e.target.style.background = "#002244")}
-          onMouseOut={(e) => (e.target.style.background = "#003366")}
-        >
-          Redefinir
-        </button>
-
-        {mensagem && (
-          <p style={{ marginTop: "15px", color: "#333", fontSize: "14px" }}>{mensagem}</p>
-        )}
-      </div>
+    <div>
+      <Header />
+      <main id="container">
+        <form id="login_form" onSubmit={handleRedefinirSenha}>
+          <h4></h4>
+          <div id="form_header">
+            <h1 className="login">Redefinir Senha</h1>
+          </div>
+          <div id="input">
+            <div id="input-box">
+              <label htmlFor="password" className="label-write">
+                Nova Senha
+                <div className="input-field">
+                  <i className="fa-solid fa-key icon-login"></i>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Digite a nova senha"
+                    required
+                    value={novaSenha}
+                    onChange={(e) => setNovaSenha(e.target.value)}
+                  />
+                </div>
+              </label>
+            </div>
+          </div>
+          <button type="submit" className="login-button">
+            Redefinir
+          </button>
+          <div className="mensagem">
+            {mensagem}
+          </div>
+        </form>
+      </main>
     </div>
   );
 }

@@ -13,6 +13,10 @@ import { FaMoon, FaSun, FaPhone, FaUser, FaSignOutAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useAuth } from "../../context/AuthProvider";
+import Header from "../TelasHeadFoot/Header";
+import Footer from "../TelasHeadFoot/Footer";
+import cursosImg from '../imagens/cursos.png';
+import './TelaInicial.css';
 
 
 export default function HomePage() {
@@ -50,83 +54,54 @@ export default function HomePage() {
 
 
   return (
-    <div className={mainTheme} style={{ minHeight: "100vh" }}>
-      <Navbar expand="lg" variant={navTheme} className={`${navBg} py-3`} fixed="top">
-        <Container>
-          <Navbar.Brand href="#" className="fw-bold text-white">
-            Curso<span className="text-warning">Finder</span>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto align-items-center gap-3">
-              {isAuthenticated ? (
-                <>
-                  
-                  <Button
-                    variant="light"
-                    size="sm"
-                    onClick={() => {
-                      logout();
-                    }}
-                    className="d-flex align-items-center gap-1"
-                    title="Logout"
+    <div style={{ minHeight: "100vh" }}>
+      <Header />
+      <div className="mainTheme" style={{ paddingTop: "90px" }}>
+        <main className="vitrine">
+          <div className="gray-background">
+            <div className="header-inner-content-head">
+              <div className="header-bottom-side">
+                <div className="header-bottom-side-left">
+                  <h2>
+                    Menos <span className="texto">busca</span>
+                    <br /> mais <span className="texto">aprendizado</span>
+                  </h2>
+                  <button
+                    className="article-button"
+                    onClick={() => navigate("/buscarcurso")}
                   >
-                    <FaSignOutAlt />
-                    Sair
-                  </Button>
-                </>
-              ) : (
-                <Button variant="light" size="sm" onClick={() => navigate("/login")}>
-                  <FaUser className="me-2" />
-                  Login
-                </Button>
-              )}
-
-              <Button
-                variant={darkMode ? "light" : "dark"}
-                size="sm"
-                onClick={toggleDarkMode}
-                title={darkMode ? "Modo claro" : "Modo escuro"}
-              >
-                {darkMode ? <FaSun /> : <FaMoon />}
-              </Button>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-      <div style={{ paddingTop: "90px" }}>
-        <Container className="text-center py-5">
-          <h2 className="fw-bold">
-            Menos <span className="text-primary">busca</span>, mais{" "}
-            <span className="text-success">aprendizado</span>
-          </h2>
-          <p className="lead">Encontre os melhores cursos em poucos cliques.</p>
-          <Button variant="success" onClick={() => navigate("/buscarcurso")}>
-            Ver Cursos &rarr;
-          </Button>
-        </Container>
+                    Ver Cursos &#8594;
+                  </button>
+                </div>
+                <br />
+                <div className="header-bottom-side-right">
+                  <img src={cursosImg} alt="Cursos" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
 
         <Container className="py-5">
-        <h3 className="text-center mb-4">Cursos em Destaque</h3>
-        <Row className="g-4">
-          {ultimosCursos.map((curso) => (
-            <Col key={curso.id} md={4}>
-              <Card className="h-100 shadow">
-                <Card.Body>
-                  <Card.Title>{curso.titulo}</Card.Title>
-                  <Card.Text>
-                    Clique em "Saiba mais" para ver a descrição completa.
-                  </Card.Text>
-                  <Button variant="primary" onClick={() => abrirModal(curso)}>
-                    Saiba mais
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+          <h3 className="text-center mb-4">Cursos em Destaque</h3>
+          <Row className="g-4">
+            {ultimosCursos.map((curso) => (
+              <Col key={curso.id} md={4}>
+                <Card className="h-100 shadow detalhe">
+                  <Card.Body>
+                    <Card.Title>{curso.titulo}</Card.Title>
+                    <Card.Text>
+                      Clique em "Saiba mais" para ver a descrição completa.
+                    </Card.Text>
+                    <button className="button-inicial" onClick={() => abrirModal(curso)}>
+                      Saiba mais
+                    </button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </div>
 
       <Modal show={showModal} onHide={fecharModal}>
@@ -151,16 +126,7 @@ export default function HomePage() {
         </Modal.Footer>
       </Modal>
 
-      <footer className="bg-dark text-white py-4 mb-0" style={{ marginTop: "150px" }}>
-        <Container className="text-center">
-          <hr className="my-3" />
-          <p className="mb-0">
-            &copy; 2025 CursoFinder - Todos os direitos reservados
-          </p>
-        </Container>
-      </footer>
+      <Footer />
     </div>
   );
 }
-
-

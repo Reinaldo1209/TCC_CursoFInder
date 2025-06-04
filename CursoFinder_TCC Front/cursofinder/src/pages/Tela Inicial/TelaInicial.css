@@ -1,0 +1,108 @@
+body{
+    background-color: #f2f2f2;
+}
+
+.texto {
+    color: #002060;
+}
+
+.header-bottom-side {
+    display: flex;
+    padding: 50px;
+}
+
+.header-inner-content-head {
+    padding: 10px;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-bottom-side-left {
+    height: 100%;
+    flex-basis: 90%;
+    text-transform: uppercase;
+}
+
+.header-bottom-side-left h2 {
+    font-size: 51.2px;
+    margin-bottom: 1.5rem;
+}
+
+.article-button {
+    background-color: #004c94;
+    color: white;
+    border: none;
+    padding: 0.8rem 3.8rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.article-button:hover {
+    background-color: #002060;
+}
+
+.header-bottom-side-right {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-bottom-side-right img {
+    width: 80%;
+}
+
+.vitrine {
+    background-color: #ebebeb;
+}
+
+@media (max-width: 800px) {
+    .header-bottom-side {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 4rem;
+    }
+
+    .header-bottom-side-left h2{
+        font-size: 30px;
+    }
+
+    .header-bottom-side-right img {
+        width: 80%;
+    }
+
+    .header-inner-content-head {
+        padding-top: 80px;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .article-button{
+        padding: 10px 35px;
+        font-size: 12px;
+    }
+}
+
+.gray-background {
+    background-image: radial-gradient(#fff, #D9D9D9);
+}
+
+.button-inicial {
+    border: none;
+    background-color: #094b8d;
+    color: white;
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+/*BuscarCurso*/
+.button-buscar {
+    border: none;
+    background-color: #094b8d;
+    color: white;
+}
