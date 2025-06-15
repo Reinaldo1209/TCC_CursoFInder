@@ -16,6 +16,7 @@ export function AuthProvider({ children }) {
       setUser({
         nome: decoded.nome || decoded.name || decoded.email || decoded.unique_name,
         email: decoded.email,
+        role: decoded.role || decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"],
         ...decoded
       });
     } catch (error) {

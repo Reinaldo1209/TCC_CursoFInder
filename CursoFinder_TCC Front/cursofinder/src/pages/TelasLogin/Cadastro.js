@@ -6,10 +6,12 @@ export default function Cadastro() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [backendError, setBackendError] = useState("");
   const navigate = useNavigate();
 
   const handleCadastro = async (e) => {
-    e.preventDefault(); // Evita o reload da página ao submeter o formulário
+    e.preventDefault();
+    setBackendError("");
     try {
       const response = await fetch("https://localhost:7238/api/auth/register", {
         method: "POST",
@@ -23,18 +25,23 @@ export default function Cadastro() {
         }),
       });
 
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch {
+        data = null;
+      }
 
       if (!response.ok) {
-        console.error("Erro ao cadastrar:", data);
-        throw new Error("Erro ao cadastrar usuário");
+        let errorMsg = (data && data.message) || (typeof data === "string" ? data : "Erro ao cadastrar usuário");
+        setBackendError(errorMsg);
+        return;
       }
 
       localStorage.setItem("token", data.token);
       navigate("/");
     } catch (error) {
-      console.error("Erro ao cadastrar:", error);
-      alert("Erro ao cadastrar. Verifique os dados e tente novamente.");
+      setBackendError("Erro ao cadastrar. Verifique os dados e tente novamente.");
     }
   };
 
@@ -47,6 +54,11 @@ export default function Cadastro() {
           <div id="form_header">
             <h1 className="login">Cadastro</h1>
           </div>
+          {backendError && (
+            <div style={{ color: 'red', marginBottom: 10, textAlign: 'center' }}>
+              {backendError}
+            </div>
+          )}
           <div id="input">
             <div id="input-box">
               <label htmlFor="name" className="label-write">

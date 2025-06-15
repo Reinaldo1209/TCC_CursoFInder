@@ -7,7 +7,8 @@ import RedefinirSenha from "./pages/TelasLogin/RedefinirSenha";
 import TelaInicial from "./pages/Tela Inicial/TelaInicial";
 import BuscarCurso from "./pages/Tela Inicial/BuscarCurso";
 import MeusCursosPage from "./pages/Tela Inicial/MeusCursosPage";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute, { RoleRoute } from "./components/PrivateRoute";
+import AdminFaculdade from "./pages/Tela Inicial/AdminFaculdade";
 
 function App() {
   return (
@@ -24,6 +25,19 @@ function App() {
             <MeusCursosPage />
           </PrivateRoute>
         } />
+        <Route path="/adminfaculdade" element={
+          <RoleRoute allowedRoles={["AdminFaculdade", "AdminGeral"]}>
+            <AdminFaculdade />
+          </RoleRoute>
+        } />
+        {/* Exemplo: rota só para AdminGeral */}
+        {/*
+        <Route path="/admingeral" element={
+          <RoleRoute allowedRoles={["AdminGeral"]}>
+            <AdminGeral />
+          </RoleRoute>
+        } />
+        */}
       </Routes>
     </Router>
   );

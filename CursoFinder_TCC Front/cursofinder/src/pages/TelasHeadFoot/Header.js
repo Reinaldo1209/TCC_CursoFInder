@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import './header.css';
 import { useAuth } from "../../context/AuthProvider";
+import { Modal, Button } from 'react-bootstrap';
 
 export default function Header() {
   const [cursos, setCursos] = useState([]);
@@ -9,7 +10,8 @@ export default function Header() {
   const [filteredCursos, setFilteredCursos] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
-  const { user, isAuthenticated, logout } = useAuth();
+  const [showParcerias, setShowParcerias] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
   const toggleSearchBox = () => {
@@ -107,9 +109,9 @@ export default function Header() {
           <i className="fas fa-sun"></i>
           <span className="ball"></span>
         </label>
-        <div className="fale-conosco">
-          <i className="fa-solid fa-phone"></i>
-          <p className="fale">Fale Conosco</p>
+        <div className="fale-conosco" onClick={() => setShowParcerias(true)} style={{cursor:'pointer'}}>
+          <i className="fa-solid fa-building"></i>
+          <p className="fale">Parcerias</p>
         </div>
       </div>
       <header>
@@ -175,20 +177,34 @@ export default function Header() {
             {filteredCursos.length > 0 ? (
               filteredCursos.map((curso) => (
                 <li key={curso.id}>
-                  <a href="#">
+                  <button type="button" style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', width: '100%' }}>
                     <div style={{ padding: "10px" }}>
                       <strong>{curso.titulo}</strong><br />
                       <small>{curso.descricao}</small>
                     </div>
-                  </a>
+                  </button>
                 </li>
               ))
             ) : (
-              <li><a>Nenhum curso encontrado.</a></li>
+              <li><span>Nenhum curso encontrado.</span></li>
             )}
           </ul>
         </div>
       </header>
+
+      <Modal show={showParcerias} onHide={() => setShowParcerias(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Parcerias</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Para estabelecer parcerias e cadastrar os cursos da sua instituição no site, envie um e-mail para <a href="mailto:contato@cursofinder.com">contato@cursofinder.com</a>.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowParcerias(false)}>
+            Fechar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

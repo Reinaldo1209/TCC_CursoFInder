@@ -27,25 +27,32 @@ namespace CursoFinder.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto model)
+        public async Task<IActionResult> Register(RegisterDto dto)
         {
-            var user = new User { UserName = model.UserName, Email = model.Email };
-            var result = await _userManager.CreateAsync(user, model.Password);
+            var user = new User { UserName = dto.UserName, Email = dto.Email };
+            var result = await _userManager.CreateAsync(user, dto.Password);
 
             if (!result.Succeeded)
                 return BadRequest(result.Errors);
 
-            return Ok(new { message = "Usuário criado com sucesso!" });
+            // Usuário comum por padrão
+            await _userManager.AddToRoleAsync(user, "Usuario");
+
+            return Ok("Usuário registrado com sucesso");
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto model)
+        public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
-            var user = await _userManager.FindByEmailAsync(model.Email);
-            if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
-                return Unauthorized();
+            var user = await _userManager.FindByEmailAsync(dto.Email);
+            if (user == null || !await _userManager.CheckPasswordAsync(user, dto.Password))
+                return Unauthorized("Email ou senha inválidos.");
 
-            var token = GenerateJwtToken(user);
+            var roles = await _userManager.GetRolesAsync(user);
+            var role = roles.FirstOrDefault() ?? "Usuario"; // Default se não tiver role
+
+            var token = GenerateJwtToken(user, role);
+
             return Ok(new { token });
         }
 
@@ -93,20 +100,23 @@ namespace CursoFinder.Controllers
             return Ok("Senha redefinida com sucesso.");
         }
 
-        private string GenerateJwtToken(User user)
+        private string GenerateJwtToken(User user, string role)
         {
             var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+
             var claims = new List<Claim>
     {
-        new Claim(ClaimTypes.NameIdentifier, user.Id), // adiciona o ID do usuário
-        new Claim(ClaimTypes.Name, user.UserName)
+        new Claim(ClaimTypes.NameIdentifier, user.Id), // Id do usuário
+        new Claim(ClaimTypes.Name, user.UserName),     // Nome do usuário
+        new Claim(JwtRegisteredClaimNames.Sub, user.Email), // Email no sub (opcional, pode manter)
+        new Claim(ClaimTypes.Role, role)               // Role do usuário
     };
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddHours(2),
+                expires: DateTime.UtcNow.AddHours(4),          // 4 horas de validade
                 signingCredentials: new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
             );
 

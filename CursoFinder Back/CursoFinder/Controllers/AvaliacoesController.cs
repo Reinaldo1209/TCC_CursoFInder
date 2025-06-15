@@ -18,6 +18,7 @@ public class AvaliacoesController : ControllerBase
         _context = context;
     }
 
+    [Authorize(Roles = "Usuario")]
     [HttpPost]
     public async Task<IActionResult> AvaliarCurso([FromBody] AvaliacaoDTO dto)
     {
@@ -47,6 +48,8 @@ public class AvaliacoesController : ControllerBase
         return Ok("Avaliação registrada com sucesso.");
     }
 
+
+    // Público (anônimo pode consultar as avaliações de um curso)
     [AllowAnonymous]
     [HttpGet("{cursoId}")]
     public async Task<IActionResult> GetAvaliacoesDoCurso(int cursoId)
@@ -65,3 +68,4 @@ public class AvaliacoesController : ControllerBase
         return Ok(avaliacoes);
     }
 }
+

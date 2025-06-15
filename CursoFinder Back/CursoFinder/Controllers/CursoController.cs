@@ -1,8 +1,10 @@
 ﻿using CursoFinder.Data;
+using CursoFinder.DTOs;
 using CursoFinder.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace CursoFinder.Controllers
 {
@@ -39,20 +41,48 @@ namespace CursoFinder.Controllers
             return Ok(curso);
         }
 
-        // POST: api/Curso
-        [HttpPost]
-        [Authorize] // Apenas usuários autenticados podem cadastrar novos cursos
-        public async Task<ActionResult<Curso>> PostCurso(Curso curso)
+        [Authorize(Roles = "AdminFaculdade,AdminGeral")]
+        [HttpGet("admin")]
+        public async Task<ActionResult<IEnumerable<Curso>>> GetCursosDoAdmin()
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var cursos = await _context.Cursos
+                .Where(c => c.UserId == userId)
+                .ToListAsync();
+
+            return Ok(cursos);
+        }
+
+        [Authorize(Roles = "AdminFaculdade,AdminGeral")]
+        [HttpPost]
+        public async Task<IActionResult> CriarCurso([FromBody] CursoCreateDTO dto)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var curso = new Curso
+            {
+                Titulo = dto.Titulo,
+                Tipo = dto.Tipo,
+                Localização = dto.Localização,
+                Descricao = dto.Descricao,
+                Instituicao = dto.Instituicao,
+                CargaHoraria = dto.CargaHoraria,
+                Link = dto.Link,
+                Valor = dto.Valor,
+                UserId = userId
+            };
+
             _context.Cursos.Add(curso);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetCursoById), new { id = curso.Id }, curso);
+            return Ok(curso);
         }
+
 
         // PUT: api/Curso/5
         [HttpPut("{id}")]
-        [Authorize]
+        [Authorize(Roles = "AdminFaculdade,AdminGeral")]
         public async Task<IActionResult> PutCurso(int id, Curso curso)
         {
             if (id != curso.Id)
@@ -67,7 +97,10 @@ namespace CursoFinder.Controllers
             cursoExistente.Descricao = curso.Descricao;
             cursoExistente.Instituicao = curso.Instituicao;
             cursoExistente.CargaHoraria = curso.CargaHoraria;
+            cursoExistente.Localização = curso.Localização;
+            cursoExistente.Link = curso.Link;
             cursoExistente.Valor = curso.Valor;
+            cursoExistente.Link = curso.Link;
 
             await _context.SaveChangesAsync();
             return NoContent();
@@ -75,7 +108,7 @@ namespace CursoFinder.Controllers
 
         // DELETE: api/Curso/5
         [HttpDelete("{id}")]
-        [Authorize]
+        [Authorize(Roles = "AdminFaculdade,AdminGeral")]
         public async Task<IActionResult> DeleteCurso(int id)
         {
             var curso = await _context.Cursos.FindAsync(id);

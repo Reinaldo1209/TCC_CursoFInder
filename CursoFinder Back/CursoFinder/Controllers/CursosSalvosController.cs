@@ -9,7 +9,7 @@ namespace CursoFinder.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize] // Qualquer usuário autenticado pode usar
     public class CursosSalvosController : ControllerBase
     {
         private readonly AppDbContext _context;

@@ -36,6 +36,9 @@ namespace CursoFinder.Migrations
                     b.Property<int>("CursoId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("CursoId1")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DataAvaliacao")
                         .HasColumnType("datetime(6)");
 
@@ -46,11 +49,18 @@ namespace CursoFinder.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
+                    b.Property<string>("UserId1")
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CursoId");
 
+                    b.HasIndex("CursoId1");
+
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Avaliacoes");
                 });
@@ -72,13 +82,27 @@ namespace CursoFinder.Migrations
                     b.Property<string>("Instituicao")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Link")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Localização")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Tipo")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Titulo")
                         .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Valor")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Cursos");
                 });
@@ -307,18 +331,36 @@ namespace CursoFinder.Migrations
             modelBuilder.Entity("CursoFinder.Models.Avaliacao", b =>
                 {
                     b.HasOne("CursoFinder.Models.Curso", "Curso")
-                        .WithMany("Avaliacoes")
+                        .WithMany()
                         .HasForeignKey("CursoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CursoFinder.Models.User", "User")
+                    b.HasOne("CursoFinder.Models.Curso", null)
                         .WithMany("Avaliacoes")
+                        .HasForeignKey("CursoId1");
+
+                    b.HasOne("CursoFinder.Models.User", "User")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CursoFinder.Models.User", null)
+                        .WithMany("Avaliacoes")
+                        .HasForeignKey("UserId1");
+
                     b.Navigation("Curso");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CursoFinder.Models.Curso", b =>
+                {
+                    b.HasOne("CursoFinder.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("User");
                 });

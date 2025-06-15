@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import {
   Container,
-  Navbar,
-  Nav,
   Row,
   Col,
   Card,
   Button,
   Modal,
 } from "react-bootstrap";
-import { FaMoon, FaSun, FaPhone, FaUser, FaSignOutAlt } from "react-icons/fa";
+import { FaMoon, FaSun, FaPhone, FaUser, FaSignOutAlt, FaLink } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useAuth } from "../../context/AuthProvider";
@@ -20,19 +18,11 @@ import './TelaInicial.css';
 
 
 export default function HomePage() {
-  const [darkMode, setDarkMode] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [cursoSelecionado, setCursoSelecionado] = useState(null);
   const [cursos, setCursos] = useState([]);
   const navigate = useNavigate();
-
-  const { user, isAuthenticated, logout } = useAuth();
-
-  const toggleDarkMode = () => setDarkMode(!darkMode);
-
-  const mainTheme = darkMode ? "bg-dark text-light" : "bg-light text-dark";
-  const navTheme = darkMode ? "dark" : "light";
-  const navBg = darkMode ? "bg-secondary" : "bg-primary";
+  const { user } = useAuth();
 
   useEffect(() => {
     fetch("https://localhost:7238/api/Curso")
@@ -72,6 +62,15 @@ export default function HomePage() {
                   >
                     Ver Cursos &#8594;
                   </button>
+                  {user && (user.role === "AdminFaculdade" || user.role === "AdminGeral") && (
+                    <button
+                      className="article-button ms-2"
+                      style={{ background: '#007bff', color: '#fff', border: 'none' }}
+                      onClick={() => navigate("/adminfaculdade")}
+                    >
+                      Tela Admin
+                    </button>
+                  )}
                 </div>
                 <br />
                 <div className="header-bottom-side-right">
@@ -89,7 +88,20 @@ export default function HomePage() {
               <Col key={curso.id} md={4}>
                 <Card className="h-100 shadow detalhe">
                   <Card.Body>
-                    <Card.Title>{curso.titulo}</Card.Title>
+                    <Card.Title className="d-flex align-items-center justify-content-between">
+                      <span>{curso.titulo}</span>
+                      {curso.link && (
+                        <a
+                          href={curso.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Acessar Site do Curso"
+                          style={{ color: '#0d6efd', fontSize: 22, marginLeft: 8 }}
+                        >
+                          <FaLink />
+                        </a>
+                      )}
+                    </Card.Title>
                     <Card.Text>
                       Clique em "Saiba mais" para ver a descrição completa.
                     </Card.Text>
@@ -113,6 +125,8 @@ export default function HomePage() {
             <>
               <h5>{cursoSelecionado.titulo}</h5>
               <p><strong>Descrição:</strong> {cursoSelecionado.descricao}</p>
+              <p><strong>Tipo:</strong> {cursoSelecionado.tipo || "N/A"}</p>
+              <p><strong>Localização:</strong> {cursoSelecionado.localização || cursoSelecionado.localizacao || "N/A"}</p>
               <p><strong>Instituição:</strong> {cursoSelecionado.instituicao || "N/A"}</p>
               <p><strong>Carga Horária:</strong> {cursoSelecionado.cargaHoraria || "N/A"}</p>
               <p><strong>Valor:</strong> {cursoSelecionado.valor || "N/A"}</p>

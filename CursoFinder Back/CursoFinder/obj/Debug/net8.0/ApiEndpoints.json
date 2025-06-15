@@ -1,5 +1,26 @@
 [
   {
+    "ContainingType": "AdminController",
+    "Method": "PromoverUsuario",
+    "RelativePath": "api/Admin/promover",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "novaRole",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CursoFinder.Controllers.AuthController",
     "Method": "ForgotPassword",
     "RelativePath": "api/auth/forgot-password",
@@ -24,7 +45,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
+        "Name": "dto",
         "Type": "CursoFinder.DTOs.LoginDto",
         "IsRequired": true
       }
@@ -40,7 +61,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
+        "Name": "dto",
         "Type": "CursoFinder.DTOs.RegisterDto",
         "IsRequired": true
       }
@@ -117,29 +138,19 @@
   },
   {
     "ContainingType": "CursoFinder.Controllers.CursoController",
-    "Method": "PostCurso",
+    "Method": "CriarCurso",
     "RelativePath": "api/Curso",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "curso",
-        "Type": "CursoFinder.Models.Curso",
+        "Name": "dto",
+        "Type": "CursoFinder.DTOs.CursoCreateDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "CursoFinder.Models.Curso",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "CursoFinder.Controllers.CursoController",
@@ -203,6 +214,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CursoFinder.Controllers.CursoController",
+    "Method": "GetCursosDoAdmin",
+    "RelativePath": "api/Curso/admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CursoFinder.Models.Curso, CursoFinder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "CursoFinder.Controllers.CursosSalvosController",

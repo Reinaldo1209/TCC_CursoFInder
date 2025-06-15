@@ -221,3 +221,7 @@ body.dark-mode #forgot_password a:hover{
 body.dark-mode #forgot_password_login a:hover{
     color: #ffffff;
 }
+
+body.dark-mode .fa-chevron-down{
+    color: white;
+}

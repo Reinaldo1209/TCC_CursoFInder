@@ -12,12 +12,11 @@ namespace CursoFinder.Data
         public DbSet<CursoSalvo> CursosSalvos { get; set; }
         public DbSet<Avaliacao> Avaliacoes { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            // CursoSalvo - índice único para impedir duplicidade de salvamento
+            // CursoSalvo (como você já tem)
             builder.Entity<CursoSalvo>()
                 .HasIndex(cs => new { cs.UserId, cs.CursoId })
                 .IsUnique();
@@ -31,6 +30,26 @@ namespace CursoFinder.Data
                 .HasOne(cs => cs.Curso)
                 .WithMany()
                 .HasForeignKey(cs => cs.CursoId);
+
+            // Relacionamento Curso → User (AdminFaculdade)
+            builder.Entity<Curso>()
+                .HasOne(c => c.User)
+                .WithMany()
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Adicione isso para Avaliacao:
+            builder.Entity<Avaliacao>()
+                .HasOne(a => a.User)
+                .WithMany() // ou com coleção se User tiver Avaliacoes
+                .HasForeignKey(a => a.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Avaliacao>()
+                .HasOne(a => a.Curso)
+                .WithMany() // ou com coleção se Curso tiver Avaliacoes
+                .HasForeignKey(a => a.CursoId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
